@@ -141,7 +141,7 @@ You can use `plyr.less` or `plyr.scss` file included in `/src` as part of your b
 The icons used in the Plyr controls are loaded in an SVG sprite. The sprite is automatically loaded from our CDN by default. If you already have an icon build system in place, you can include the source plyr icons (see `/src/sprite` for source icons).
 
 #### Using the `iconUrl` option
-You can however specify your own `iconUrl` option and Plyr will determine if the url is absolute and requires loading by AJAX/CORS due to current browser limitations or if it's a relative path, just use the path directly. 
+You can, however, specify your own `iconUrl` option and Plyr will determine if the url is absolute and requires loading by AJAX/CORS due to current browser limitations or if it's a relative path, just use the path directly. 
 
 If you're using the `<base>` tag on your site, you may need to use something like this:
 [svgfixer.js](https://gist.github.com/leonderijke/c5cf7c5b2e424c0061d2)
@@ -152,7 +152,7 @@ and the AJAX technique here:
 [http://css-tricks.com/ajaxing-svg-sprite/](http://css-tricks.com/ajaxing-svg-sprite/)
 
 ### Cross Origin (CORS)
-You'll notice the `crossorigin` attribute on the example `<video>` elements. This is because the TextTrack captions are loaded from another domain. If your TextTrack captions are also hosted on another domain, you will need to add this attribute and make sure your host has the correct headers setup. For more info on CORS checkout the MDN docs:
+You'll notice the `crossorigin` attribute on the example `<video>` elements. This is because the TextTrack captions are loaded from another domain. If your TextTrack captions are also hosted on another domain, you will need to add this attribute and make sure your host has the correct headers setup. For more info on CORS check out the MDN docs:
 [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 
 ### Captions
@@ -305,10 +305,10 @@ Note the single quotes encapsulating the JSON and double quotes on the object ke
     <td>Object</td>
     <td><code>{ controls: false, seek: true }</code></td>
     <td>
-		<strong>controls</strong>: Display control labels as tooltips on :hover &amp; :focus (by default, the labels are screen reader only).
-		<br><br>
-		<strong>seek</strong>: Display a seek tooltip to indicate on click where the media would seek to.
-	</td>
+        <strong>controls</strong>: Display control labels as tooltips on :hover &amp; :focus (by default, the labels are screen reader only).
+        <br><br>
+        <strong>seek</strong>: Display a seek tooltip to indicate on click where the media would seek to.
+    </td>
   </tr>
   <tr>
     <td><code>duration</code></td>
@@ -649,127 +649,127 @@ You can listen for events on the target element you setup Plyr on (see example u
   <thead>
     <tr>
       <th width="20%">Event name</th>
-	  <th width="20%">HTML5 only</th>
+      <th width="20%">HTML5 only</th>
       <th width="60%">Description</th>
     </tr>
   </thead>
   <tbody>
-	<tr>
-		<td><code>canplay</code></td>
-		<td>✔</td>
-		<td>Sent when enough data is available that the media can be played, at least for a couple of frames. This corresponds to the <code>HAVE_ENOUGH_DATA</code> <code>readyState</code>.</td>
-	</tr>
-	<tr>
-		<td><code>canplaythrough</code></td>
-		<td></td>
-		<td>Sent when the ready state changes to <code>CAN_PLAY_THROUGH</code>, indicating that the entire media can be played without interruption, assuming the download rate remains at least at the current level. <strong>Note</strong>: Manually setting the <code>currentTime</code> will eventually fire a <code>canplaythrough</code> event in firefox. Other browsers might not fire this event.</td>
-	</tr>
-	<tr>
-		<td><code>emptied</code></td>
-		<td>✔</td>
-		<td>The media has become empty; for example, this event is sent if the media has already been loaded (or partially loaded), and the <code>load()</code> method is called to reload it.</td>
-	</tr>
-	<tr>
-		<td><code>ended</code></td>
-		<td></td>
-		<td>Sent when playback completes.</td>
-	</tr>
-	<tr>
-		<td><code>error</code></td>
-		<td>✔</td>
-		<td>Sent when an error occurs.&nbsp; The element's <code>error</code> attribute contains more information.</td>
-	</tr>
-	<tr>
-		<td><code>loadeddata</code></td>
-		<td>✔</td>
-		<td>The first frame of the media has finished loading.</td>
-	</tr>
-	<tr>
-		<td><code>loadedmetadata</code></td>
-		<td>✔</td>
-		<td>The media's metadata has finished loading; all attributes now contain as much useful information as they're going to.</td>
-	</tr>
-	<tr>
-		<td><code>loadstart</code></td>
-		<td>✔</td>
-		<td>Sent when loading of the media begins.</td>
-	</tr>
-	<tr>
-		<td><code>pause</code></td>
-		<td></td>
-		<td>Sent when playback is paused.</td>
-	</tr>
-	<tr>
-		<td><code>play</code></td>
-		<td></td>
-		<td>Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior <code>pause</code> event.</td>
-	</tr>
-	<tr>
-		<td><code>playing</code></td>
-		<td></td>
-		<td>Sent when the media begins to play (either for the first time, after having been paused, or after ending and then restarting).</td>
-	</tr>
-	<tr>
-		<td><code>progress</code></td>
-		<td></td>
-		<td>Sent periodically to inform interested parties of progress downloading the media. Information about the current amount of the media that has been downloaded is available in the media element's <code>buffered</code> attribute.</td>
-	</tr>
-	<tr>
-		<td><code>seeked</code></td>
-		<td>✔</td>
-		<td>Sent when a seek operation completes.</td>
-	</tr>
-	<tr>
-		<td><code>seeking</code></td>
-		<td>✔</td>
-		<td>Sent when a seek operation begins.</td>
-	</tr>
-	<tr>
-		<td><code>stalled</code></td>
-		<td>✔</td>
-		<td>Sent when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.</td>
-	</tr>
-	<tr>
-		<td><code>timeupdate</code></td>
-		<td></td>
-		<td>The time indicated by the element's <code>currentTime</code> attribute has changed.</td>
-	</tr>
-	<tr>
-		<td><code>volumechange</code></td>
-		<td></td>
-		<td>Sent when the audio volume changes (both when the volume is set and when the <code>muted</code> attribute is changed).</td>
-	</tr>
-	<tr>
-		<td><code>waiting</code></td>
-		<td>✔</td>
-		<td>Sent when the requested operation (such as playback) is delayed pending the completion of another operation (such as a seek).</td>
-	</tr>
-	<tr>
-		<td><code>enterfullscreen</code></td>
-		<td></td>
-		<td>User enters fullscreen (either the proper fullscreen or full-window fallback for older browsers)</td>
-	</tr>
-	<tr>
-		<td><code>exitfullscreen</code></td>
-		<td></td>
-		<td>User exits fullscreen</td>
-	</tr>
-	<tr>
-		<td><code>captionsenabled</code></td>
-		<td></td>
-		<td>Captions toggled on</td>
-	</tr>
-	<tr>
-		<td><code>captionsdisabled</code></td>
-		<td></td>
-		<td>Captions toggled off</td>
-	</tr>
-	<tr>
-		<td><code>ready</code></td>
-		<td></td>
-		<td>Triggered when initial setup is done or a source change has occurred.</td>
-	</tr>
-	</tbody>
+    <tr>
+        <td><code>canplay</code></td>
+        <td>✔</td>
+        <td>Sent when enough data is available that the media can be played, at least for a couple of frames. This corresponds to the <code>HAVE_ENOUGH_DATA</code> <code>readyState</code>.</td>
+    </tr>
+    <tr>
+        <td><code>canplaythrough</code></td>
+        <td></td>
+        <td>Sent when the ready state changes to <code>CAN_PLAY_THROUGH</code>, indicating that the entire media can be played without interruption, assuming the download rate remains at least at the current level. <strong>Note</strong>: Manually setting the <code>currentTime</code> will eventually fire a <code>canplaythrough</code> event in firefox. Other browsers might not fire this event.</td>
+    </tr>
+    <tr>
+        <td><code>emptied</code></td>
+        <td>✔</td>
+        <td>The media has become empty; for example, this event is sent if the media has already been loaded (or partially loaded), and the <code>load()</code> method is called to reload it.</td>
+    </tr>
+    <tr>
+        <td><code>ended</code></td>
+        <td></td>
+        <td>Sent when playback completes.</td>
+    </tr>
+    <tr>
+        <td><code>error</code></td>
+        <td>✔</td>
+        <td>Sent when an error occurs.&nbsp; The element's <code>error</code> attribute contains more information.</td>
+    </tr>
+    <tr>
+        <td><code>loadeddata</code></td>
+        <td>✔</td>
+        <td>The first frame of the media has finished loading.</td>
+    </tr>
+    <tr>
+        <td><code>loadedmetadata</code></td>
+        <td>✔</td>
+        <td>The media's metadata has finished loading; all attributes now contain as much useful information as they're going to.</td>
+    </tr>
+    <tr>
+        <td><code>loadstart</code></td>
+        <td>✔</td>
+        <td>Sent when loading of the media begins.</td>
+    </tr>
+    <tr>
+        <td><code>pause</code></td>
+        <td></td>
+        <td>Sent when playback is paused.</td>
+    </tr>
+    <tr>
+        <td><code>play</code></td>
+        <td></td>
+        <td>Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior <code>pause</code> event.</td>
+    </tr>
+    <tr>
+        <td><code>playing</code></td>
+        <td></td>
+        <td>Sent when the media begins to play (either for the first time, after having been paused, or after ending and then restarting).</td>
+    </tr>
+    <tr>
+        <td><code>progress</code></td>
+        <td></td>
+        <td>Sent periodically to inform interested parties of progress downloading the media. Information about the current amount of the media that has been downloaded is available in the media element's <code>buffered</code> attribute.</td>
+    </tr>
+    <tr>
+        <td><code>seeked</code></td>
+        <td>✔</td>
+        <td>Sent when a seek operation completes.</td>
+    </tr>
+    <tr>
+        <td><code>seeking</code></td>
+        <td>✔</td>
+        <td>Sent when a seek operation begins.</td>
+    </tr>
+    <tr>
+        <td><code>stalled</code></td>
+        <td>✔</td>
+        <td>Sent when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.</td>
+    </tr>
+    <tr>
+        <td><code>timeupdate</code></td>
+        <td></td>
+        <td>The time indicated by the element's <code>currentTime</code> attribute has changed.</td>
+    </tr>
+    <tr>
+        <td><code>volumechange</code></td>
+        <td></td>
+        <td>Sent when the audio volume changes (both when the volume is set and when the <code>muted</code> attribute is changed).</td>
+    </tr>
+    <tr>
+        <td><code>waiting</code></td>
+        <td>✔</td>
+        <td>Sent when the requested operation (such as playback) is delayed pending the completion of another operation (such as a seek).</td>
+    </tr>
+    <tr>
+        <td><code>enterfullscreen</code></td>
+        <td></td>
+        <td>User enters fullscreen (either the proper fullscreen or full-window fallback for older browsers)</td>
+    </tr>
+    <tr>
+        <td><code>exitfullscreen</code></td>
+        <td></td>
+        <td>User exits fullscreen</td>
+    </tr>
+    <tr>
+        <td><code>captionsenabled</code></td>
+        <td></td>
+        <td>Captions toggled on</td>
+    </tr>
+    <tr>
+        <td><code>captionsdisabled</code></td>
+        <td></td>
+        <td>Captions toggled off</td>
+    </tr>
+    <tr>
+        <td><code>ready</code></td>
+        <td></td>
+        <td>Triggered when initial setup is done or a source change has occurred.</td>
+    </tr>
+    </tbody>
 </table>
 
 Details borrowed from: [https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events)
@@ -778,7 +778,7 @@ Here's an example of binding an event listener:
 
 ```javascript
 document.querySelector('.js-plyr').addEventListener('ready', function(event) {
-	var player = event.target.plyr;
+    var player = event.target.plyr;
 });
 ```
 
@@ -792,13 +792,13 @@ The native API's can be accessed through the `embed` property of the plyr object
 
 ```javascript
 document.querySelector('.js-plyr').addEventListener('ready', function(event) {
-	var player = event.target.plyr;
+    var player = event.target.plyr;
 
-	// YouTube
-	console.log(player.embed.getVideoData());
+    // YouTube
+    console.log(player.embed.getVideoData());
 
-	// Vimeo
-	console.log(player.embed.api('getColor'));
+    // Vimeo
+    console.log(player.embed.api('getColor'));
 });
 ```
 
@@ -810,7 +810,7 @@ More info on the respective API's here:
 
 ## Fullscreen
 
-Fullscreen in Plyr is supported for all browsers that [currently support it](http://caniuse.com/#feat=fullscreen). If you're using the default CSS, you can also use a "full browser" mode which will use the full browser window by adding the `plyr-fullscreen` class to your container.
+Fullscreen in Plyr is supported by all browsers that [currently support it](http://caniuse.com/#feat=fullscreen). If you're using the default CSS, you can also use a "full browser" mode which will use the full browser window by adding the `plyr-fullscreen` class to your container.
 
 ## Browser support
 
