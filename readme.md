@@ -493,7 +493,7 @@ Here's a list of the methods supported:
   <tr>
     <td><code>support(...)</code></td>
     <td>String</td>
-    <td>Determine if a player supports a certain MIME type. This is not supported for embedded content (YouTube).</td>
+    <td>Determine if a player supports a certain MIME type. This is not supported by embedded content (YouTube).</td>
   </tr>
   <tr>
     <td><code>source(...)</code></td>
@@ -810,7 +810,7 @@ More info on the respective API's here:
 
 ## Fullscreen
 
-Fullscreen in Plyr is supported for all browsers that [currently support it](http://caniuse.com/#feat=fullscreen). If you're using the default CSS, you can also use a "full browser" mode which will use the full browser window by adding the `plyr-fullscreen` class to your container.
+Fullscreen in Plyr is supported by all browsers that [currently support it](http://caniuse.com/#feat=fullscreen). If you're using the default CSS, you can also use a "full browser" mode which will use the full browser window by adding the `plyr-fullscreen` class to your container.
 
 ## Browser support
 
